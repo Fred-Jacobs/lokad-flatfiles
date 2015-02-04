@@ -54,6 +54,7 @@
     <None Include="App.config" />
     <None Include="Example\Lokad_Items.tsv" />
     <None Include="Example\Lokad_Orders.tsv" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Example\Lokad_Items.rff" />
