@@ -1,5 +1,5 @@
 ﻿Compresses a [flat data file](https://en.wikipedia.org/wiki/Comma-separated_values) (TSV, CSV) 
-[Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function).
+using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function).
 
 # Behaviour
 
@@ -35,8 +35,8 @@ Thus, to retrieve the content of the original file:
 The vast majority of real-life flat data files are very redundant, as the same identifiers,
 dates or numeric values tend to appear on multiple lines. 
 
-However, the purpose of this software is _not_ compression (if you need to keep flat files 
-in a compressed format, GZip is a better choice).
+However, the purpose of this software is not _storage_ compression (if you need to keep 
+flat files in a compressed format, GZip is a better choice).
 
 Rather, the objective of perfect hashing is to improve the speed of parsing operations. 
 Consider a file which contains 1000 lines, with the date `2015-01-01` appearing in 100 cells
