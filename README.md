@@ -1,35 +1,6 @@
 ﻿Compresses a [flat data file](https://en.wikipedia.org/wiki/Comma-separated_values) (TSV, CSV) 
 using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function).
 
-# Behaviour
-
-The file is split into two data sets: 
-
-## Content
-
-The `Content` is a list of all **distinct** byte sequences found in the file cells. 
-
- - The cell separator (`\t` or `,`) and the line separator (any combination of `\n` and `\r`)
-   are not included in the cell. Note that the parser attempts to auto-detect the
-   separator character use for the entire file.
- - Cell contents are trimmed (initial and final spaces are not kept).
- - Cells may be quoted (start with `"`, end with `"`, any interior quotes are escaped
-   as `""`), in which case the unquoted contents are used. 
- - If the file is encoded as UTF-16, cells are re-encoded a UTF-8. Otherwise, the original
-   encoding is kept.   
- 
-## Cells
-
-The `Cells` is a matrix that contains, for each cell in the file, the index of that cell's
-content in the `Content` list. 
-
-This is a line-based matrix, meaning that the cell at line `L`, column `C` is found at 
-index `L * Columns + C`. 
-
-Thus, to retrieve the content of the original file: 
-
-    Content[Cells[L * Columns + C]]
-
 # Purpose
 
 The vast majority of real-life flat data files are very redundant, as the same identifiers,
@@ -65,6 +36,35 @@ moves the cache from step 2 to step 1:
    allocations and text encoding operations for `2015-01-01` alone).
  - Subsequent layers (date-parsing, memoization, etc.) use integer identifiers
    rather than strings: comparison is faster and hash tables become simple arrays.
+
+# Behaviour
+
+The file is split into two data sets: 
+
+## Content
+
+The `Content` is a list of all **distinct** byte sequences found in the file cells. 
+
+ - The cell separator (`\t` or `,`) and the line separator (any combination of `\n` and `\r`)
+   are not included in the cell. Note that the parser attempts to auto-detect the
+   separator character use for the entire file.
+ - Cell contents are trimmed (initial and final spaces are not kept).
+ - Cells may be quoted (start with `"`, end with `"`, any interior quotes are escaped
+   as `""`), in which case the unquoted contents are used. 
+ - If the file is encoded as UTF-16, cells are re-encoded a UTF-8. Otherwise, the original
+   encoding is kept.   
+ 
+## Cells
+
+The `Cells` is a matrix that contains, for each cell in the file, the index of that cell's
+content in the `Content` list. 
+
+This is a line-based matrix, meaning that the cell at line `L`, column `C` is found at 
+index `L * Columns + C`. 
+
+Thus, to retrieve the content of the original file: 
+
+    Content[Cells[L * Columns + C]]
 
 # Layout
 
