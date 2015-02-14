@@ -39,7 +39,7 @@ moves the cache from step 2 to step 1:
 
 # Behaviour
 
-The file is split into two data sets: 
+The original flat file is split into two datasets: 
 
 ## Content
 
