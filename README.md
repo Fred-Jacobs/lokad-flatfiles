@@ -1,5 +1,5 @@
-﻿Compresses a [flat data file](https://en.wikipedia.org/wiki/Comma-separated_values) (TSV, CSV) 
-using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function). See also the [Java port](https://github.com/Lokad/lokad-flatfiles-java).
+C#/.NET stand-alone library. Compresses a [flat data file](https://en.wikipedia.org/wiki/Comma-separated_values) (TSV, CSV) 
+using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function). The library is internally used by [Lokad](https://www.lokad.com) to deliver super-fast parsing of large flat files. There is also a [Java port](https://github.com/Lokad/lokad-flatfiles-java).
 
 # Purpose
 
