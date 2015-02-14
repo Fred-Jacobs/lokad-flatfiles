@@ -1,5 +1,5 @@
 ﻿Compresses a [flat data file](https://en.wikipedia.org/wiki/Comma-separated_values) (TSV, CSV) 
-using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function).
+using [Perfect Hash Function](https://en.wikipedia.org/wiki/Perfect_hash_function). See also the [Java port](https://github.com/Lokad/lokad-flatfiles-java).
 
 # Purpose
 
